@@ -34,6 +34,7 @@ Devices
 -------
 - Pair phone
 - Hotspot
+- chromecast chrome extension
 
 Packages
 -----------------
@@ -41,4 +42,5 @@ Packages
 ```
 vim-nox
 build-essential
+google-chrome
 ```
