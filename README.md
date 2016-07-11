@@ -42,5 +42,8 @@ Packages
 ```
 vim-nox
 build-essential
+tmux
+autoconf
+automake
 google-chrome
 ```
