@@ -58,4 +58,5 @@ git
 git-hub
 git-extras
 google-chrome
+openssh-server
 ```
