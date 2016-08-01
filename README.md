@@ -45,5 +45,8 @@ build-essential
 tmux
 autoconf
 automake
+git
+git-hub
+git-extras
 google-chrome
 ```
