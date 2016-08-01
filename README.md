@@ -4,8 +4,16 @@ Setup & Tweaks
 Dotfiles
 --------
 - cd $HOME && git init
-- touch up prompt: PS1
+- touch up prompt with docker-machine expansion
 - force_color_prompt
+```
+# Docker stuff
+export MACHINE_STORAGE_PATH=/media/raid10/docker
+MACHINE_BASH_SCRIPTS=$PWD/Source/github.com/docker/machine/contrib/completion/bash/
+source $MACHINE_BASH_SCRIPTS/docker-machine.bash
+source $MACHINE_BASH_SCRIPTS/docker-machine-wrapper.bash
+source $MACHINE_BASH_SCRIPTS/docker-machine-prompt.bash
+```
 
 VIM
 ---
