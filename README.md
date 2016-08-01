@@ -19,6 +19,7 @@ VIM
 ---
 - Pathogen
 - ctrl-p
+- ag | fzf
 
 Desktop
 -------
