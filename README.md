@@ -20,7 +20,19 @@ VIM
 - Pathogen
 - ctrl-p
 ```
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
+set softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+" reStructuredText style tables
+let g:table_mode_corner_corner="+"
+let g:table_mode_header_fillchar="="
+
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+```
 Desktop
 -------
 - Auto-hide the laucher
