@@ -66,6 +66,7 @@ build-essential
 tmux
 autoconf
 automake
+gcc-arm-linux-gnueabi
 git
 git-hub
 git-extras
