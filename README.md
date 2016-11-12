@@ -71,6 +71,7 @@ google-chrome
 openssh-server
 silversearcher-ag
 etckeeper
+mdadm
 ```
 Misc
 ----
