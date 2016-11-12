@@ -1,0 +1,3 @@
+#!/bin/bash
+
+apt-mark showmanual | sort | comm -23 - base-packages
