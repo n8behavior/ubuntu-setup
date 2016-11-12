@@ -73,9 +73,10 @@ silversearcher-ag
 etckeeper
 mdadm
 ```
-Misc
-----
-`/etc/fstab`
+RAID10
+------
+
 ```
-UUID=4d9301ce-c41f-4c0c-9786-44658908551d /media/raid10 ext4 	defaults 1 2
+$ sudo mdadm --assemble --name=raid10 --scan
 ```
+add `UUID=4d9301ce-c41f-4c0c-9786-44658908551d /media/raid10 ext4 	defaults 1 2` to `/etc/fstab`
