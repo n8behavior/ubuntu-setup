@@ -72,3 +72,9 @@ openssh-server
 silversearcher-ag
 etckeeper
 ```
+Misc
+----
+`/etc/fstab`
+```
+/etc/fstab:UUID=4d9301ce-c41f-4c0c-9786-44658908551d /media/raid10 ext4 	defaults 1 2
+```
