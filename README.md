@@ -1,6 +1,11 @@
 Setup & Tweaks
 ==============
 
+etckeeper
+---------
+
+enable `etckeeper` ASAP
+
 Dotfiles
 --------
 - cd $HOME && git init
@@ -49,7 +54,9 @@ Keyboard
 
 Yubikey
 -------
+
 - https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
+  - _obsolete in 16.10_
 
 Devices
 -------
