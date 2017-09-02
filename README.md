@@ -43,6 +43,10 @@ ctrl-p
 ```
 cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
 ```
+table-mode
+```
+cd ~/.vim/bundle && git clone https://github.com/dhruvasagar/vim-table-mode
+```
 
 .vimrc
 ```
