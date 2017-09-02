@@ -8,9 +8,15 @@ enable `etckeeper` ASAP
 
 Dotfiles
 --------
-- cd $HOME && git init
-- touch up prompt with docker-machine expansion
+```
+cd $HOME && git init
+git config --global user.email mike@thesandmans.com
+git config --global user.name n8behavior
+```
 - force_color_prompt
+- touch up prompt
+
+Docker Machine (old)
 ```
 # Docker stuff
 export MACHINE_STORAGE_PATH=/media/raid10/docker
