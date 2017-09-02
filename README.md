@@ -85,6 +85,7 @@ gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Cont
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Control><shift>Left']"
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Control><shift>Up']"
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Control><shift>Down']"
+```
 
 Yubikey
 -------
