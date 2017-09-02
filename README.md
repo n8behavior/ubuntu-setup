@@ -27,7 +27,18 @@ Pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ```
+
+vim-sensible
+```
+cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible
+```
+
 ctrl-p
+```
+cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
+```
+
+.vimrc
 ```
 execute pathogen#infect()
 syntax on
@@ -42,6 +53,7 @@ let g:table_mode_header_fillchar="="
 
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 ```
+
 Desktop
 -------
 - Auto-hide the laucher
