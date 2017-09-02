@@ -73,10 +73,12 @@ Keyboard
 Map CapsLock to Control
 - `sed -i 's/XKBOPTIONS=""/XKBOPTIONS="ctrl:nocaps"/' /etc/default/keyboard`
 Ctrl+ARROW move to workspace
+```
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control>Right']"
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control>Left']"
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control>Up']"
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control>Down']"
+```
 Shift+Ctrl+ARROW move window to workspace
 ```
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><shift>Right']"
