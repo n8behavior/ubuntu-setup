@@ -22,8 +22,12 @@ source $MACHINE_BASH_SCRIPTS/docker-machine-prompt.bash
 
 VIM
 ---
-- Pathogen
-- ctrl-p
+Pathogen
+```
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+```
+ctrl-p
 ```
 execute pathogen#infect()
 syntax on
@@ -70,7 +74,7 @@ Packages
 This list is for convenience only.  Use `show-my-packages` to get the current list on target machine
 
 ```
-vim-nox build-essential tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper mdadm
+vim-nox build-essential curl tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper mdadm
 ```
 RAID10
 ------
