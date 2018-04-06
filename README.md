@@ -9,25 +9,22 @@ enable `etckeeper` ASAP
 Dotfiles
 --------
 ```
-cd $HOME && git init
+git config --global push.default simple
 git config --global user.email mike@thesandmans.com
 git config --global user.name n8behavior
+git config --global gpg.program gpg2
+git config --global user.signingkey 73ABC7FDECC41AF4
 ```
 - force_color_prompt
 - touch up prompt
 
-Docker Machine (old)
-```
-# Docker stuff
-export MACHINE_STORAGE_PATH=/media/raid10/docker
-MACHINE_BASH_SCRIPTS=$PWD/Source/github.com/docker/machine/contrib/completion/bash/
-source $MACHINE_BASH_SCRIPTS/docker-machine.bash
-source $MACHINE_BASH_SCRIPTS/docker-machine-wrapper.bash
-source $MACHINE_BASH_SCRIPTS/docker-machine-prompt.bash
-```
-
 VIM
 ---
+Make it the default editor
+```
+sudo update-alternatives --config editor
+```
+
 Pathogen
 ```
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -76,7 +73,7 @@ Keyboard
 
 Map CapsLock to Control
 ```
-sed -i 's/XKBOPTIONS=""/XKBOPTIONS="ctrl:nocaps"/' /etc/default/keyboard
+sudo sed -i 's/XKBOPTIONS=""/XKBOPTIONS="ctrl:nocaps"/' /etc/default/keyboard
 ```
 
 Ctrl+ARROW move to workspace
@@ -115,10 +112,60 @@ This list is for convenience only.  Use `show-my-packages` to get the current li
 ```
 vim-nox build-essential curl tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper mdadm
 ```
-RAID10
+
+nvidia
 ------
 
+_note: May have to first-boot with `nomodeset` from grub2 menu_
+
 ```
-$ sudo mdadm --assemble --name=raid10 --scan
+sudo add-apt-repository ppa:graphics-drivers/ppa
 ```
-add `UUID=4d9301ce-c41f-4c0c-9786-44658908551d /media/raid10 ext4 	defaults 1 2` to `/etc/fstab`
+Then install latest, for example
+```
+sudo apt install nvidia-390
+```
+
+Compiler
+--------
+
+Add latest GNU compiler collection
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+```
+Then add latest, for example
+```
+sudo apt install g++-7 -y
+```
+Finally, create **like group** and set auto/current
+```
+sudo update-alternatives --auto
+  --install /usr/bin/gcc gcc /usr/bin/gcc-7 70
+  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-7
+  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-7
+  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-7
+  --slave /usr/bin/g++ g++ /usr/bin/g++-7
+```
+
+GPG
+---
+Restore from
+- `.gnupg/dirmngr.conf`
+- `.gnupg/gpg.conf`
+- `.gnupg/pubring.kbx`
+or make new
+```
+gpg2 --full-gen-key
+```
+If, new reconfig `git` with new key
+```
+gpg2 --list-secret-keys --keyid-format LONG
+```
+and https://github.com/settings/keys
+```
+gpg2 --armor --export 73A....
+```
+Finally, setup BASH
+```
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+```
