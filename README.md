@@ -184,6 +184,7 @@ sudo fc-cache -vf ~/.local/share/fonts/
 Add 
 - `source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
 - `source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh"` to `.bashrc`
+
 In `.vimrc` add
 ```
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
