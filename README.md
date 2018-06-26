@@ -140,11 +140,11 @@ sudo apt install g++-7 -y
 Finally, create **like group** and set auto/current
 ```
 sudo update-alternatives --auto
-  --install /usr/bin/gcc gcc /usr/bin/gcc-7 70
-  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-7
-  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-7
-  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-7
-  --slave /usr/bin/g++ g++ /usr/bin/g++-7
+  --install /usr/bin/gcc gcc /usr/bin/gcc-8 80
+  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-8
+  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-8
+  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-8
+  --slave /usr/bin/g++ g++ /usr/bin/g++-8
 ```
 
 GPG
