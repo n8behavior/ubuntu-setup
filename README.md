@@ -50,15 +50,22 @@ cd ~/.vim/bundle && git clone https://github.com/dhruvasagar/vim-table-mode
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set number
 
 set softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
-" reStructuredText style tables
-let g:table_mode_corner_corner="+"
-let g:table_mode_header_fillchar="="
+" markdown style tables
+let g:table_mode_corner_corner="|"
+let g:table_mode_header_fillchar="-"
 
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_working_path_mode = ''
+
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+set noshowmode
 ```
 
 Desktop
