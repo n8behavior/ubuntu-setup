@@ -117,7 +117,7 @@ Packages
 This list is for convenience only.  Use `show-my-packages` to get the current list on target machine
 
 ```
-vim-nox build-essential gnupg2 curl tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper mdadm
+vim-nox build-essential gnupg2 curl tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip
 ```
 
 nvidia
