@@ -60,7 +60,7 @@ let g:table_mode_corner_corner="|"
 let g:table_mode_header_fillchar="-"
 
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_working_path_mode = ''
+let g:ctrlp_working_path_mode = 'ra'
 
 set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
 
