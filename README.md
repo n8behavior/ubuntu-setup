@@ -142,7 +142,7 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 ```
 Then add latest, for example
 ```
-sudo apt install g++-7 -y
+sudo apt install g++-8 -y
 ```
 Finally, create **like group** and set auto/current
 ```
