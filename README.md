@@ -14,6 +14,7 @@ git config --global user.email mike@thesandmans.com
 git config --global user.name n8behavior
 git config --global gpg.program gpg2
 git config --global user.signingkey 73ABC7FDECC41AF4
+git config --global commit.gpgsign true
 ```
 - force_color_prompt
 - touch up prompt
@@ -146,11 +147,11 @@ sudo apt install g++-8 -y
 ```
 Finally, create **like group** and set auto/current
 ```
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 \
-  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-8 \
-  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-8 \
-  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-8 \
-  --slave /usr/bin/g++ g++ /usr/bin/g++-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80 \
+  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 \
+  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 \
+  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9 \
+  --slave /usr/bin/g++ g++ /usr/bin/g++-9
 ```
 
 GPG
