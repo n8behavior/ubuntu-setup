@@ -123,7 +123,7 @@ vim-nox build-essential gnupg2 curl tmux autoconf automake git chromium-browser 
 
 nvidia
 ------
-
+**_obsolete: as of 19.04_**
 _note: May have to first-boot with `nomodeset` from grub2 menu_
 
 ```
