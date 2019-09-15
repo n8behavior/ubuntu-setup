@@ -1,49 +1,36 @@
-Setup & Tweaks
-==============
+# Setup & Tweaks
 
-etckeeper
----------
-
-enable `etckeeper` ASAP
-
-Dotfiles
---------
+## Git
 ```
 git config --global push.default simple
 git config --global user.email mike@thesandmans.com
 git config --global user.name n8behavior
 git config --global gpg.program gpg2
-git config --global user.signingkey 73ABC7FDECC41AF4
+git config --global user.signingkey 73A...
 git config --global commit.gpgsign true
 ```
-- force_color_prompt
-- touch up prompt
 
-VIM
----
-Make it the default editor
-```
+## VIM
+```sh
+# Make vim the default editor
 sudo update-alternatives --config editor
-```
 
-Pathogen
-```
+# Pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-```
 
-vim-sensible
-```
+# vim-sensible
 cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible
-```
-
-ctrl-p
-```
+# ctrl-p
 cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
-```
-table-mode
-```
+# markdown tables
 cd ~/.vim/bundle && git clone https://github.com/dhruvasagar/vim-table-mode
+# markdown preview
+cd ~/.vim/bundle && git clone https://github.com/suan/vim-instant-markdown
+```
+Consider Limelight and Goyo, if added use...
+```vimscript
+autocmd FileType markdown Limelight
 ```
 
 .vimrc
@@ -67,85 +54,47 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:�
 
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 set noshowmode
+
+set termguicolors
+colorscheme slate
+set background=dark
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 ```
 
-Desktop
--------
+## Desktop
 - Auto-hide the laucher
-- Enable workspaces
-- Natural scrolling
 - Disable mouse tap to click
 
-Keyboard
---------
+## Keyboard
 
-Map CapsLock to Control
-```
+```sh
+# Map CapsLock to Control
 sudo sed -i 's/XKBOPTIONS=""/XKBOPTIONS="ctrl:nocaps"/' /etc/default/keyboard
-```
 
-Ctrl+ARROW move to workspace
-```
-gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control>Right']"
-gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control>Left']"
+# Ctrl+ARROW move to workspace
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control>Up']"
 gsettings set  org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control>Down']"
-```
 
-Shift+Ctrl+ARROW move window to workspace
-```
-gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Control><shift>Right']"
-gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Control><shift>Left']"
+# Shift+Ctrl+ARROW move window to workspace
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Control><shift>Up']"
 gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Control><shift>Down']"
 ```
 
-Yubikey
--------
-
-- https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
-  - _obsolete in 16.10_
-
-Devices
--------
-- Pair phone
-- Hotspot
-- chromecast chrome extension
-
-Packages
------------------
+## Packages
 
 This list is for convenience only.  Use `show-my-packages` to get the current list on target machine
 
 ```
-vim-nox build-essential gnupg2 curl tmux autoconf automake git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip
+vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip
 ```
 
-nvidia
-------
-**_obsolete: as of 19.04_**
-_note: May have to first-boot with `nomodeset` from grub2 menu_
-
-```
-sudo add-apt-repository ppa:graphics-drivers/ppa
-```
-Then install latest, for example
-```
-sudo apt install nvidia-390
-```
-
-Compiler
---------
+## Compilers
 
 Add latest GNU compiler collection
 ```
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt install g++-9 -y
 ```
-Then add latest, for example
-```
-sudo apt install g++-8 -y
-```
-Finally, create **like group** and set auto/current
+Finally, create **link group** and set auto/current
 ```
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80 \
   --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 \
@@ -154,8 +103,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80 \
   --slave /usr/bin/g++ g++ /usr/bin/g++-9
 ```
 
-GPG
----
+## GPG
 Restore from
 - `.gnupg/dirmngr.conf`
 - `.gnupg/gpg.conf`
@@ -176,8 +124,7 @@ Finally, setup BASH
 ```
 echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 ```
-Powerline
----------
+## Powerline
 
 ```
 sudo pip install powerline-status
