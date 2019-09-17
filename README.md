@@ -8,6 +8,7 @@ git config --global user.name n8behavior
 git config --global gpg.program gpg2
 git config --global user.signingkey 73A...
 git config --global commit.gpgsign true
+git config --global core.excludesfile '~/.cvsignore'
 git config --global alias.root "rev-parse --show-toplevel"
 ```
 
