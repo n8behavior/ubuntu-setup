@@ -92,7 +92,7 @@ gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Contr
 This list is for convenience only.  Use `show-my-packages` to get the current list on target machine
 
 ```
-vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip
+vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip fontconfig
 ```
 
 ## Compilers
@@ -134,7 +134,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 ## Powerline
 
 ```
-sudo pip install powerline-status
+pip3 install --user powerline-status
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 mkdir -p ~/.local/share/fonts ~/.config/fontconfig/conf.d/
@@ -143,11 +143,11 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 sudo fc-cache -vf ~/.local/share/fonts/
 ```
 Add 
-- `source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
-- `source "/usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh"` to `.bashrc`
+- `source "$HOME/.local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
+- `source "$HOME/.local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh"` to `.bashrc`
 
 In `.vimrc` add
 ```
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+set rtp+=.local/lib/python3.6/site-packages/powerline/bindings/vim
 set noshowmode
 ```
