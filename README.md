@@ -62,6 +62,9 @@ set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:�
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 set noshowmode
 
+" This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 colorscheme slate
 set background=dark
