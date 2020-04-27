@@ -146,11 +146,11 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 sudo fc-cache -vf ~/.local/share/fonts/
 ```
 Add 
-- `source "$HOME/.local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
-- `source "$HOME/.local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh"` to `.bashrc`
+- `source "$HOME/$(python -m site --user-site)/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
+- `source "$HOME/$(python -m site --user-site)/powerline/bindings/bash/powerline.sh"` to `.bashrc`
 
 In `.vimrc` add
 ```
-set rtp+=.local/lib/python3.6/site-packages/powerline/bindings/vim
+set rtp+=${$(python -m site --user-site)}/powerline/bindings/vim
 set noshowmode
 ```
