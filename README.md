@@ -146,8 +146,8 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 sudo fc-cache -vf ~/.local/share/fonts/
 ```
 Add 
-- `source "$HOME/$(python -m site --user-site)/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
-- `source "$HOME/$(python -m site --user-site)/powerline/bindings/bash/powerline.sh"` to `.bashrc`
+- `source "$(python -m site --user-site)/powerline/bindings/tmux/powerline.conf"` to `.tmux.conf`
+- `source "$(python -m site --user-site)/powerline/bindings/bash/powerline.sh"` to `.bashrc`
 
 In `.vimrc` add
 ```
