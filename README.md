@@ -95,7 +95,7 @@ gsettings set  org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Contr
 This list is for convenience only.  Use `show-my-packages` to get the current list on target machine
 
 ```
-vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip fontconfig
+vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server silversearcher-ag etckeeper python3-pip fontconfig python-is-python3
 ```
 
 ## Compilers
