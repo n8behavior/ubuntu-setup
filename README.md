@@ -102,15 +102,21 @@ vim-nox build-essential gnupg2 curl tmux git chromium-browser openssh-server sil
 
 Add latest GNU compiler collection
 ```
-sudo apt install g++-9 -y
+sudo apt install g++-10 -y
 ```
 Finally, create **link group** and set auto/current
 ```
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80 \
-  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 \
-  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 \
-  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9 \
-  --slave /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 \
+  --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-10 \
+  --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-10 \
+  --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-10 \
+  --slave /usr/bin/g++ g++ /usr/bin/g++-10
+```
+All them for copy/paste convenience :)
+```
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-10 --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-10 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-10 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-8 --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-8 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-8 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 ```
 
 ## GPG
