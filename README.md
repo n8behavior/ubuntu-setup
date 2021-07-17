@@ -6,7 +6,7 @@ git config --global push.default simple
 git config --global user.email mike@thesandmans.com
 git config --global user.name n8behavior
 git config --global gpg.program gpg2
-git config --global user.signingkey 73A...
+git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG)
 git config --global commit.gpgsign true
 git config --global core.excludesfile '~/.cvsignore'
 git config --global alias.root "rev-parse --show-toplevel"
@@ -134,7 +134,7 @@ gpg2 --list-secret-keys --keyid-format LONG
 ```
 and https://github.com/settings/keys
 ```
-gpg2 --armor --export 73A....
+gpg2 --armor --export $(gpg --list-secret-keys --keyid-format LONG)
 ```
 Finally, setup BASH
 ```
