@@ -161,3 +161,44 @@ In `.vimrc` add
 set rtp+=${$(python -m site --user-site)}/powerline/bindings/vim
 set noshowmode
 ```
+
+## tmux and history
+
+```sh
+# .bashrc
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+if [ ${TMUX+IS_SET} ]; then
+    HISTFILE=~/.bash_history_$(tmux-pane)
+fi
+HISTCONTROL=ignoreboth
+HISTSIZE=-1
+HISTFILESIZE=-1
+HISTTIMEFORMAT="%s "
+shopt -s histappend
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+```
+```sh
+# .bash_aliases
+alias hist="cat .bash_history_* | sed '$!N;s/\n/ /' | cut -c2- | sort -n |cut -c12-"
+```
+```sh
+# .bash_functions
+
+tmux-session-id () {
+  echo $(tmux list-session | grep attached | awk -F: '{print $1}')
+}
+
+tmux-window-id () {
+  echo $(tmux list-windows | grep active | awk -F: '{print $1}')
+}
+
+tmux-pane-id () {
+  echo $(tmux list-panes | grep active | awk -F: '{print $1}')
+}
+
+tmux-pane () {
+ echo "$(tmux-session-id).$(tmux-window-id).$(tmux-pane-id)"
+}
+```
