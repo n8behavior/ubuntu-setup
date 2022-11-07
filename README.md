@@ -22,18 +22,12 @@ alias cdroot='cd $(git root)'
 # Make vim the default editor
 sudo update-alternatives --config editor
 
-# Pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+mkdir -p ~/.vim/pack/auto/start && cd $_
 
-# vim-sensible
-cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible
-# ctrl-p
-cd ~/.vim/bundle && git clone https://github.com/ctrlpvim/ctrlp.vim
-# markdown tables
-cd ~/.vim/bundle && git clone https://github.com/dhruvasagar/vim-table-mode
-# markdown preview
-cd ~/.vim/bundle && git clone https://github.com/suan/vim-instant-markdown
+git clone https://github.com/tpope/vim-sensible
+git clone https://github.com/ctrlpvim/ctrlp.vim
+git clone https://github.com/dhruvasagar/vim-table-mode
+git clone https://github.com/suan/vim-instant-markdown
 ```
 Consider Limelight and Goyo, if added use...
 ```vimscript
@@ -42,7 +36,6 @@ autocmd FileType markdown Limelight
 
 .vimrc
 ```
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set number
